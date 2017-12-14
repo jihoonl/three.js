@@ -59,16 +59,16 @@
 			var loader = new THREE.ColladaLoader();
 			// loader.load( './models/collada/kawada-hironx.dae', function ( collada ) {
 			loader.load( './models/collada/base_v0/base.dae', function ( collada ) {
-      console.log(collada);
+        console.log(collada);
 
 				dae = collada.scene;
 
 				dae.traverse( function ( child ) {
+          console.log(child);
 
 					if ( child instanceof THREE.Mesh ) {
-            console.log(child);
 
-
+            child.material.transparent = false;
 						// model does not have normals
 						child.material.flatShading = true;
 
